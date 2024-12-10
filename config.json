@@ -97,8 +97,7 @@
         "legacy_plugins": [
             "samp_bcrypt",
             "mysql",
-            "env",
-            "PawnPlus"
+            "env"
         ], // NOTA: Apenas para plugins SA-MP que ainda não foram migrados para o open.mp
         "main_scripts": [
             "main"

@@ -1,3 +1,0 @@
-const GENDER_MASCULINE = 0;
-const GENDER_FEMININE = 1;
-const MAX_LOGIN_ATTEMPTS = 5;
