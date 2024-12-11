@@ -5,6 +5,7 @@
 #include <a_mysql>
 #include <samp_bcrypt>
 #include <env>
+#include <sampvoice>
 
 // Criamos o identificador da conexão com o banco de dados (conhecido como handle - https://pt.wikipedia.org/wiki/Handle_(inform%C3%A1tica))
 new MySQL:Handle;
@@ -50,6 +51,10 @@ new PlayerData[MAX_PLAYERS][E_PLAYER_DATA];
 const GENDER_MASCULINE = 0;
 const GENDER_FEMININE = 1;
 const MAX_LOGIN_ATTEMPTS = 5;
+
+// Variáveis VOIP para o chat global e local
+new SV_GSTREAM:gstream = SV_NULL, SV_LSTREAM:lstream[MAX_PLAYERS] = { SV_NULL, ... };
+
 
 // Definição de macro isnull para verificar se uma string é nula (vazia)
 #if !defined isnull
@@ -99,6 +104,9 @@ public OnGameModeInit() {
     SendRconCommand("game.map "#MAPNAME"");
     SendRconCommand("language "#LANGUAGE"");
     SetGameModeText(GAMEMODE_TITLE);
+
+    // Criamos o chat global
+    gstream = SvCreateGStream(0xffff0000, "Global");
     return 1;
 }
 
@@ -108,6 +116,9 @@ public OnGameModeExit() {
 
     // Imprimimos uma mensagem no console dizendo que o servidor foi reiniciado
     print("Servidor reiniciando... aguarde");
+
+    // Deletamos o chat global
+    if(gstream) SvDeleteStream(gstream);
     return 1;
 }
 
@@ -142,6 +153,29 @@ public OnPlayerConnect(playerid) {
     // e isso pode causar problemas de "hanging", ou seja, travamento do servidor
     // uma vez que estará utilizando várias threads ao mesmo tempo, e, portanto, drenando recursos
     mysql_tquery(Handle, queryBuffer, "CheckAccount", "i", playerid);
+
+    // Verifica se o jogador tem o VOIP instalado em seu GTA
+    if(SvGetVersion(playerid) == SV_NULL) {
+        SendClientMessage(playerid, -1, "VOIP não encontrado");
+    }
+    // Verifica se o jogador está com o microfone disponível
+    else if(SvHasMicro(playerid) == SV_FALSE) {
+        SendClientMessage(playerid, -1, "Não foi possível acessar seu microfone");
+    }
+    // Criamos um chat local e armazenamos na nossa variável "lstream"
+    // Jogadores em até 40 unidades de distância poderão ouvir
+    else if((lstream[playerid] = SvCreateDLStreamAtPlayer(40.0, SV_INFINITY, playerid, 0xff0000ff, "Local"))) {
+        SendClientMessage(playerid, -1, "Press Z to talk to global chat and B to talk to local chat.");
+
+        // Colocamos o jogador no chat global como um ouvinte
+        if(gstream) SvAttachListenerToStream(gstream, playerid);
+
+        // Aqui nós habilitamos as teclas Z e B (Z para falar no chat global e B para falar no local)
+        // As teclas são representadas por seu valor hexadecimal com base na tabela ASCII
+        // https://pt.wikipedia.org/wiki/ASCII
+        SvAddKey(playerid, 0x42);
+        SvAddKey(playerid, 0x5A);
+    }
 }
 
 public OnPlayerDisconnect(playerid, reason) {
@@ -164,6 +198,12 @@ public OnPlayerDisconnect(playerid, reason) {
     // pois caso não fizermos isso, o jogador que conectar e receber o ID do jogador que desconectou
     // irá "herdar" o valor das variáveis associadas àquele ID
     ResetData(playerid);
+
+    // Quando o jogador desconecta, nós deletamos o chat local
+    if(lstream[playerid]) {
+        SvDeleteStream(lstream[playerid]);
+        lstream[playerid] = SV_NULL;
+    }
     return 1;
 }
 
@@ -171,6 +211,21 @@ public OnPlayerRequestClass(playerid, classid) {
     if(PlayerData[playerid][pLoggedin]) {
         SpawnPlayer(playerid);
     }
+}
+
+// Callbacks do sampvoice
+public SV_VOID:OnPlayerActivationKeyPress(SV_UINT:playerid, SV_UINT:keyid)  {
+    // Colocamos o jogador no chat local caso ele pressione B
+    if(keyid == 0x42 && lstream[playerid]) SvAttachSpeakerToStream(lstream[playerid], playerid);
+    // Colocamos o jogador no chat global caso ele pressione Z
+    if(keyid == 0x5A && gstream) SvAttachSpeakerToStream(gstream, playerid);
+}
+
+public SV_VOID:OnPlayerActivationKeyRelease(SV_UINT:playerid, SV_UINT:keyid) {
+    // Retiramos o jogador do chat global quando ele parar de pressionar a tecla B
+    if(keyid == 0x42 && lstream[playerid]) SvDetachSpeakerFromStream(lstream[playerid], playerid);
+    // Retiramos o jogador do chat global quando ele parar de pressionar a tecla Z
+    if(keyid == 0x5A && gstream) SvDetachSpeakerFromStream(gstream, playerid);
 }
 
 forward CheckAccount(playerid);
