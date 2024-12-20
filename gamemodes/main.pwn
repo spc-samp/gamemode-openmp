@@ -165,7 +165,7 @@ public OnPlayerConnect(playerid) {
     // Criamos um chat local e armazenamos na nossa variável "lstream"
     // Jogadores em até 40 unidades de distância poderão ouvir
     else if((lstream[playerid] = SvCreateDLStreamAtPlayer(40.0, SV_INFINITY, playerid, 0xff0000ff, "Local"))) {
-        SendClientMessage(playerid, -1, "Press Z to talk to global chat and B to talk to local chat.");
+        SendClientMessage(playerid, -1, "Pressione Z para falar no chat global e B para falar no chat local.");
 
         // Colocamos o jogador no chat global como um ouvinte
         if(gstream) SvAttachListenerToStream(gstream, playerid);
