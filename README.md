@@ -40,22 +40,31 @@ E é simples assim. A compilação deve gerar um arquivo chamado "Main.amx" na past
 
 Aviso: caso optar por utilizar o Qawno e sampvoice, ignore os dois warnings que surgem devido a versão do compilador do open.mp ou adicione o código `#pragma warning disable 239` no topo do script (embora eu pessoalmente não recomende essa abordagem pois promove más práticas de programação). São warnings de *const-correctness* que não afetam em nada a compilação ou o funcionamento do servidor.
 
-# Versões
-Se você está confuso sobre qual versão escolher para o seu sistema operacional, uma breve explicação:
+# Escolhendo a Versão da Gamemode
 
-- **gamemode-win-x86**
+Se você está confuso sobre qual versão escolher para o seu sistema operacional, aqui está uma breve explicação:
 
-Essa versão é para sistemas Windows e roda o servidor e seus plugins na arquitetura x86 (que é o padrão para a maioria dos plugins).
+### Versões Disponíveis
 
-- **gamemode-x86-centos**
+- **`gamemode-win-x86`**
+  - **Descrição:** Esta versão é para sistemas Windows.
+  - **Detalhes:** Roda o servidor e seus plugins na arquitetura x86, que é o padrão para a maioria dos plugins.
 
-Essa versão é para a distribuição CentOS
+- **`gamemode-x86-centos`**
+  - **Descrição:** Esta versão é destinada à distribuição CentOS.
+  - **Detalhes:** Certifique-se de que seu servidor utiliza o CentOS antes de escolher esta versão.
 
-- **gamemode-x86-debian**
+- **`gamemode-x86-debian`**
+  - **Descrição:** Esta versão é para a distribuição Debian e distribuições baseadas em Debian.
+  - **Detalhes:** Inclui suporte para distribuições como Ubuntu (a mais popular) e outras variantes baseadas em Debian.
 
-Essa versão é para a distribuição Debian e distribuições baseadas em Debian (como a mais popular, Ubuntu, entre várias outras)
+### Como Identificar Sua Distribuição Linux
 
-Se você não tem certeza sobre qual distribuição Linux seu servidor está rodando, recomendamos consultar o provedor ou rodar o comando lsb_release, disponível na maioria das distribuições, para obter informações relacionadas à distro.
+Se você não tem certeza sobre qual distribuição Linux seu servidor está rodando, recomendamos:
 
-É necessário diferenciar entre distros baseadas em CentOS ou Debian pois o plugin MySQL tem versões separadas para distros baseadas em Debian/CentOS.
+1. Consultar seu provedor de hospedagem.
+2. Rodar o comando `lsb_release` (disponível na maioria das distribuições Linux) para obter informações relacionadas à sua distribuição.
+
+**Nota:** A diferenciação entre distribuições baseadas em CentOS e Debian é necessária porque o plugin MySQL possui versões específicas para cada tipo de distribuição.
+
 
