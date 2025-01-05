@@ -43,13 +43,16 @@ Aviso: caso optar por utilizar o Qawno e sampvoice, ignore os dois warnings que 
 # Versões
 Se você está confuso sobre qual versão escolher para o seu sistema operacional, uma breve explicação:
 
-- gamemode-win-x86
+- **gamemode-win-x86**
+
 Essa versão é para sistemas Windows e roda o servidor e seus plugins na arquitetura x86 (que é o padrão para a maioria dos plugins).
 
-gamemode-x86-centos
+- **gamemode-x86-centos**
+
 Essa versão é para a distribuição CentOS
 
-- gamemode-x86-debian
+- **gamemode-x86-debian**
+
 Essa versão é para a distribuição Debian e distribuições baseadas em Debian (como a mais popular, Ubuntu, entre várias outras)
 
 Se você não tem certeza sobre qual distribuição Linux seu servidor está rodando, recomendamos consultar o provedor ou rodar o comando lsb_release, disponível na maioria das distribuições, para obter informações relacionadas à distro.
