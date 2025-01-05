@@ -7,8 +7,9 @@ Uma gamemode base de código aberto, simples, porém completa e em dia com as boas
 | Nome                | Descrição                                                                                     |
 |---------------------|-----------------------------------------------------------------------------------------------|
 | `compiler/include/*/` | Contém as bibliotecas necessárias                                                           |
-| `components/*`      | Contém os componentes (plugins que foram migrados para o open.mp)                             |
-| `gamemodes/*`       | Contém o arquivo compilado e o código fonte do script                                         |
+| `components/*/`      | Contém os componentes (plugins que foram migrados para o open.mp)                             |
+| `plugins/*/`      | Contém os plugins SA-MP (plugins legado que ainda não foram migrados para o open.mp)                             |
+| `gamemodes/*/`       | Contém o arquivo compilado e o código fonte do script                                         |
 | `.env`              | Contém as variáveis de ambiente contendo as credenciais do banco de dados MySQL              |
 | `config.json`       | Contém as configurações do servidor open.mp. Para mais informações, veja [documentação](https://www.open.mp/docs/server/config.json) |
 | `omp-server`        | Executável que inicia o servidor                                                             |
@@ -29,11 +30,13 @@ Uma gamemode base de código aberto, simples, porém completa e em dia com as boas
 Nas versões pré-compiladas ([que podem ser encontradas aqui](https://github.com/spc-samp/gamemode-openmp/releases/latest)), o servidor vem com uma pasta extra chamada Qawno, que é o ambiente de desenvolvimento padrão do open.mp, equivalente ao Pawno. Tudo o que você precisa fazer é executar o arquivo qawno.exe e seguir o passo-a-passo abaixo:
 
 1 - Ao abrir o programa, no canto superior esquerdo, clique na opção "File" e selecione "Open"
+
 ![qawno](https://i.imgur.com/zybzJxD.png)
 
 Após isso, navegue até a pasta onde a gamemode está localizada e abra o arquivo `Main.pwn` localizado na pasta `gamemodes`
 
 2 - Clique na opção "Build" no menu superior e selecione a opção "Compile" ou pressione F5 em seu teclado
+
 ![qawno](https://i.imgur.com/pLII7sm.png)
 
 E é simples assim. A compilação deve gerar um arquivo chamado "Main.amx" na pasta `gamemodes`.
