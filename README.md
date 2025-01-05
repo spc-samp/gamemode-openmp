@@ -4,15 +4,15 @@ Uma gamemode base de código aberto, simples, porém completa e em dia com as boas
 [![Licença](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit)
 
 # Estrutura
-| Nome | Descrição |
-| ---- | ------- |
-| `compiler/include/*/` | | Contém as bibliotecas necessárias |
-| `components/*` | | Contém os componentes (plugins que foram migrados para o open.mp) open.mp |
-| `gamemodes/*` | | Contém o arquivo compilado e o código fonte do script |
-| `.env` | | Contém as variáveis de ambiente contendo as credenciais do banco de dados MySQL  |
-| `config.json` | | Contém as configurações do servidor open.mp. Para saber o que cada valor significa, recomendo ler: https://www.open.mp/docs/server/config.json  |
-| `omp-server` | | Executável que inicia o servidor |
-| `scheme.sql` | | Contém a estrutura da tabela SQL `jogadores` e suas colunas. |
+| Nome                | Descrição                                                                                     |
+|---------------------|-----------------------------------------------------------------------------------------------|
+| `compiler/include/*/` | Contém as bibliotecas necessárias                                                           |
+| `components/*`      | Contém os componentes (plugins que foram migrados para o open.mp)                             |
+| `gamemodes/*`       | Contém o arquivo compilado e o código fonte do script                                         |
+| `.env`              | Contém as variáveis de ambiente contendo as credenciais do banco de dados MySQL              |
+| `config.json`       | Contém as configurações do servidor open.mp. Para mais informações, veja [documentação](https://www.open.mp/docs/server/config.json) |
+| `omp-server`        | Executável que inicia o servidor                                                             |
+| `scheme.sql`        | Contém a estrutura da tabela SQL `jogadores` e suas colunas                                  |
 
 # Vantagens
 - Escalabilidade
