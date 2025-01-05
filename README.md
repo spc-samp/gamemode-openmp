@@ -28,15 +28,12 @@ Uma gamemode base de código aberto, simples, porém completa e em dia com as boas
 - **Código limpo e bem documentado**  
 - **Fácil de configurar, exigindo apenas conhecimento extremamente básico em gerenciamento de banco de dados e Pawn**
 
----
 
 ## Funções
 
 - Tela de login simples em `dialog`
 - Sistema de escolha de gênero do personagem
 - Salvamento da última posição do jogador no servidor
-
----
 
 ## Compilação
 
@@ -60,23 +57,24 @@ Clique em `Build > Compile` ou pressione **F5** no teclado.
 
 ![qawno](https://i.imgur.com/pLII7sm.png)
 
-### Aviso sobre Warnings
+### Nota sobre Warnings
 Se você optar por usar **Qawno** e **sampvoice**, pode ignorar os dois *warnings* que surgirem devido à versão do compilador do open.mp.  
-Caso prefira, adicione a linha abaixo no topo do script para suprimir esses *warnings*:
+
+Caso prefira, adicione a linha abaixo no topo do script para suprimir esses *warnings* (embora eu não recomende esta abordagem uma vez que encoraja más práticas):
 
 ```pawn
 #pragma warning disable 239
 ```
 
-# Para Desenvolvedores Avançados
+## Para Desenvolvedores Avançados
 Recomendamos o uso do Visual Studio Code como ambiente de desenvolvimento.
 
 Confira este tutorial para configurar o Visual Studio Code para compilar scripts Pawn: https://youtu.be/jITcf95XGgA
 
-# Escolhendo a Versão da Gamemode
+## Escolhendo a Versão da Gamemode
 Se você está confuso sobre qual versão escolher para o seu sistema operacional, veja abaixo:
 
-# Versões Disponíveis
+### Versões Disponíveis
 - **`gamemode-win-x86`**
   - **Descrição:** Esta versão é para sistemas Windows.
   - **Detalhes:** Roda o servidor e seus plugins na arquitetura x86, que é o padrão para a maioria dos plugins.
@@ -89,7 +87,19 @@ Se você está confuso sobre qual versão escolher para o seu sistema operacional, 
   - **Descrição:** Esta versão é para a distribuição Debian e distribuições baseadas em Debian.
   - **Detalhes:** Inclui suporte para distribuições como Ubuntu (a mais popular) e outras variantes baseadas em Debian.
 
-# Estrutura SQL
+## Como Identificar Sua Distribuição Linux
+Se você não tem certeza sobre qual distribuição Linux seu servidor está utilizando:
+
+1. Consulte seu provedor de hospedagem.
+2. Rode o comando abaixo no terminal para obter informações:
+```
+lsb_release -a
+```
+Esse comando exibirá a distribuição e a versão do sistema operacional.
+
+## Estrutura SQL
+
+### Tabela `jogadores`
 
 | **Nome**            | **Descrição**                                                                                 |
 |---------------------|-----------------------------------------------------------------------------------------------|
