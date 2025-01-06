@@ -111,5 +111,6 @@
     },
     "sleep": 5.0,
     "use_dyn_ticks": true,
-    "website": "open.mp"
+    "website": "open.mp",
+    "spc_rich_presence": "" // URL da imagem/banner do seu servidor para enviar ao spc_rich_presence. Para mais informações, veja: https://github.com/spc-samp/spc-rich-presence
 }
