@@ -111,5 +111,6 @@
     },
     "sleep": 5.0,
     "use_dyn_ticks": true,
-    "website": "open.mp"
+    "website": "open.mp",
+    "spc_rich_presence": "" // URL da imagem para o plugin spc_rich_presence que adiciona o RPC (atividade, que mostra quando as pessoas estão jogando em seu servidor) do Discord no cliente SA-MP. Para mais informações, veja: https://github.com/spc-samp/spc-rich-presence
 }
