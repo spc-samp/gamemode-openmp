@@ -1,4 +1,4 @@
-# gamemode-open
+# gamemode-openmp
 
 Uma gamemode base de código aberto, simples, porém completa e em dia com as boas práticas de código e segurança.
 
@@ -111,7 +111,7 @@ Esse comando exibirá a distribuição e a versão do sistema operacional.
 | `Z_Pos`       | Eixo Z da última posição salva do jogador antes de se desconectar |
 | `Angle`        | Último ângulo/rotação do jogador registrado antes de se desconectar                                                              |
 | `Skin`        | ID da skin/roupa do jogador                                   |
-| `Genero`        | Gênero do jogador (0 para masculino | 1 para feminino)                                   |
+| `Genero`        | Gênero do jogador (0 para masculino / 1 para feminino)                                   |
 
 ## Licença
 
