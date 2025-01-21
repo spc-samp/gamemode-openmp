@@ -1,23 +1,23 @@
 # gamemode-open
 
-Uma gamemode base de cÛdigo aberto, simples, porÈm completa e em dia com as boas pr·ticas de cÛdigo e seguranÁa.
+Uma gamemode base de c√≥digo aberto, simples, por√©m completa e em dia com as boas pr√°ticas de c√≥digo e seguran√ßa.
 
-[![LicenÁa](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit)
+[![Licen√ßa](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit)
 
 ---
 
 ## Estrutura do Projeto
 
-| **Nome**            | **DescriÁ„o**                                                                                 |
+| **Nome**            | **Descri√ß√£o**                                                                                 |
 |---------------------|-----------------------------------------------------------------------------------------------|
-| `compiler/include/` | ContÈm as bibliotecas necess·rias                                                             |
-| `components/`       | ContÈm os componentes (plugins que foram migrados para o open.mp)                             |
-| `plugins/`          | ContÈm os plugins SA-MP (plugins legado que ainda n„o foram migrados para o open.mp)           |
-| `gamemodes/`        | ContÈm o arquivo compilado e o cÛdigo fonte do script                                          |
-| `.env`              | ContÈm as vari·veis de ambiente contendo as credenciais do banco de dados MySQL                |
-| `config.json`       | ContÈm as configuraÁıes do servidor open.mp. Para mais informaÁıes, veja a [documentaÁ„o oficial](https://www.open.mp/docs/server/config.json) |
-| `omp-server`        | Execut·vel que inicia o servidor                                                              |
-| `scheme.sql`        | ContÈm a estrutura da tabela SQL de jogadores e suas colunas                                   |
+| `compiler/include/` | Cont√©m as bibliotecas necess√°rias                                                             |
+| `components/`       | Cont√©m os componentes (plugins que foram migrados para o open.mp)                             |
+| `plugins/`          | Cont√©m os plugins SA-MP (plugins legado que ainda n√£o foram migrados para o open.mp)           |
+| `gamemodes/`        | Cont√©m o arquivo compilado e o c√≥digo fonte do script                                          |
+| `.env`              | Cont√©m as vari√°veis de ambiente contendo as credenciais do banco de dados MySQL                |
+| `config.json`       | Cont√©m as configura√ß√µes do servidor open.mp. Para mais informa√ß√µes, veja a [documenta√ß√£o oficial](https://www.open.mp/docs/server/config.json) |
+| `omp-server`        | Execut√°vel que inicia o servidor                                                              |
+| `scheme.sql`        | Cont√©m a estrutura da tabela SQL de jogadores e suas colunas                                   |
 
 ---
 
@@ -25,30 +25,30 @@ Uma gamemode base de cÛdigo aberto, simples, porÈm completa e em dia com as boas
 
 - **Escalabilidade**  
 - **Criptografia de todas as senhas utilizando bcrypt**  
-- **CÛdigo limpo e bem documentado**  
-- **F·cil de configurar, exigindo apenas conhecimento extremamente b·sico em gerenciamento de banco de dados e Pawn**
+- **C√≥digo limpo e bem documentado**  
+- **F√°cil de configurar, exigindo apenas conhecimento extremamente b√°sico em gerenciamento de banco de dados e Pawn**
 
 
-## FunÁıes
+## Fun√ß√µes
 
 - Tela de login simples em `dialog`
-- Sistema de escolha de gÍnero do personagem
-- Salvamento da ˙ltima posiÁ„o do jogador no servidor
+- Sistema de escolha de g√™nero do personagem
+- Salvamento da √∫ltima posi√ß√£o do jogador no servidor
 
-## CompilaÁ„o
+## Compila√ß√£o
 
-### PrÈ-requisitos
-As versıes prÈ-compiladas podem ser encontradas na [p·gina de releases](https://github.com/spc-samp/gamemode-openmp/releases/latest).
+### Pr√©-requisitos
+As vers√µes pr√©-compiladas podem ser encontradas na [p√°gina de releases](https://github.com/spc-samp/gamemode-openmp/releases/latest).
 
-Nas versıes distribuÌdas, o servidor inclui uma pasta chamada **Qawno**, que È o ambiente de desenvolvimento padr„o do open.mp, equivalente ao **Pawno** do SA-MP. 
+Nas vers√µes distribu√≠das, o servidor inclui uma pasta chamada **Qawno**, que √© o ambiente de desenvolvimento padr√£o do open.mp, equivalente ao **Pawno** do SA-MP. 
 
 ### Passo-a-passo para compilar usando Qawno:
 
 #### Abra o **Qawno**
-Execute o arquivo `qawno.exe` que est· na pasta baixada.
+Execute o arquivo `qawno.exe` que est√° na pasta baixada.
 
 #### Abra o arquivo do script
-No **menu superior**, clique em `File > Open` e navegue atÈ a pasta `gamemodes/`. Selecione o arquivo **Main.pwn**.
+No **menu superior**, clique em `File > Open` e navegue at√© a pasta `gamemodes/`. Selecione o arquivo **Main.pwn**.
 
 ![qawno](https://i.imgur.com/zybzJxD.png)
 
@@ -58,58 +58,137 @@ Clique em `Build > Compile` ou pressione **F5** no teclado.
 ![qawno](https://i.imgur.com/pLII7sm.png)
 
 ### Nota sobre Warnings
-Se vocÍ optar por usar **Qawno** e **sampvoice**, pode ignorar os dois *warnings* que surgirem devido ‡ vers„o do compilador do open.mp.  
+Se voc√™ optar por usar **Qawno** e **sampvoice**, pode ignorar os dois *warnings* que surgirem devido √† vers√£o do compilador do open.mp.  
 
-Caso prefira, adicione a linha abaixo no topo do script para suprimir esses *warnings* (embora eu n„o recomende esta abordagem uma vez que encoraja m·s pr·ticas):
+Caso prefira, adicione a linha abaixo no topo do script para suprimir esses *warnings* (embora eu n√£o recomende esta abordagem uma vez que encoraja m√°s pr√°ticas):
 
 ```pawn
 #pragma warning disable 239
 ```
 
-## Para Desenvolvedores AvanÁados
+## Para Desenvolvedores Avan√ßados
 Recomendamos o uso do Visual Studio Code como ambiente de desenvolvimento.
 
 Confira este tutorial para configurar o Visual Studio Code para compilar scripts Pawn: https://youtu.be/jITcf95XGgA
 
-## Escolhendo a Vers„o da Gamemode
-Se vocÍ est· confuso sobre qual vers„o escolher para o seu sistema operacional, veja abaixo:
+## Escolhendo a Vers√£o da Gamemode
+Se voc√™ est√° confuso sobre qual vers√£o escolher para o seu sistema operacional, veja abaixo:
 
-### Versıes DisponÌveis
+### Vers√µes Dispon√≠veis
 - **`gamemode-win-x86`**
-  - **DescriÁ„o:** Esta vers„o È para sistemas Windows.
-  - **Detalhes:** Roda o servidor e seus plugins na arquitetura x86, que È o padr„o para a maioria dos plugins.
+  - **Descri√ß√£o:** Esta vers√£o √© para sistemas Windows.
+  - **Detalhes:** Roda o servidor e seus plugins na arquitetura x86, que √© o padr√£o para a maioria dos plugins.
 
 - **`gamemode-x86-centos`**
-  - **DescriÁ„o:** Esta vers„o È destinada ‡ distribuiÁ„o CentOS.
-  - **Detalhes:** Certifique-se de que seu servidor utiliza o CentOS antes de escolher esta vers„o.
+  - **Descri√ß√£o:** Esta vers√£o √© destinada √† distribui√ß√£o CentOS.
+  - **Detalhes:** Certifique-se de que seu servidor utiliza o CentOS antes de escolher esta vers√£o.
 
 - **`gamemode-x86-debian`**
-  - **DescriÁ„o:** Esta vers„o È para a distribuiÁ„o Debian e distribuiÁıes baseadas em Debian.
-  - **Detalhes:** Inclui suporte para distribuiÁıes como Ubuntu (a mais popular) e outras variantes baseadas em Debian.
+  - **Descri√ß√£o:** Esta vers√£o √© para a distribui√ß√£o Debian e distribui√ß√µes baseadas em Debian.
+  - **Detalhes:** Inclui suporte para distribui√ß√µes como Ubuntu (a mais popular) e outras variantes baseadas em Debian.
 
-## Como Identificar Sua DistribuiÁ„o Linux
-Se vocÍ n„o tem certeza sobre qual distribuiÁ„o Linux seu servidor est· utilizando:
+## Como Identificar Sua Distribui√ß√£o Linux
+Se voc√™ n√£o tem certeza sobre qual distribui√ß√£o Linux seu servidor est√° utilizando:
 
 1. Consulte seu provedor de hospedagem.
-2. Rode o comando abaixo no terminal para obter informaÁıes:
+2. Rode o comando abaixo no terminal para obter informa√ß√µes:
 ```
 lsb_release -a
 ```
-Esse comando exibir· a distribuiÁ„o e a vers„o do sistema operacional.
+Esse comando exibir√° a distribui√ß√£o e a vers√£o do sistema operacional.
 
 ## Estrutura SQL
 
 ### Tabela `jogadores`
 
-| **Nome**            | **DescriÁ„o**                                                                                 |
+| **Nome**            | **Descri√ß√£o**                                                                                 |
 |---------------------|-----------------------------------------------------------------------------------------------|
-| `ID` | ID n˙merico ˙nico gerado pelo banco de dados ao jogador se registrar (segue comeÁando a partir de 0)                                                             |
+| `ID` | ID n√∫merico √∫nico gerado pelo banco de dados ao jogador se registrar (segue come√ßando a partir de 0)                                                             |
 | `Nome`       | Nome/apelido do jogador                             |
 | `Hash`          | Hash gerado a partir da senha do jogador pelo bcrypt           |
-| `X_Pos`        | Eixo X da ˙ltima posiÁ„o salva do jogador antes de se desconectar                                         |
-| `Y_Pos`              | Eixo Y da ˙ltima posiÁ„o salva do jogador antes de se desconectar                |
-| `Z_Pos`       | Eixo Z da ˙ltima posiÁ„o salva do jogador antes de se desconectar |
-| `Angle`        | ⁄ltimo ‚ngulo/rotaÁ„o do jogador registrado antes de se desconectar                                                              |
+| `X_Pos`        | Eixo X da √∫ltima posi√ß√£o salva do jogador antes de se desconectar                                         |
+| `Y_Pos`              | Eixo Y da √∫ltima posi√ß√£o salva do jogador antes de se desconectar                |
+| `Z_Pos`       | Eixo Z da √∫ltima posi√ß√£o salva do jogador antes de se desconectar |
+| `Angle`        | √öltimo √¢ngulo/rota√ß√£o do jogador registrado antes de se desconectar                                                              |
 | `Skin`        | ID da skin/roupa do jogador                                   |
-| `Genero`        | GÍnero do jogador (0 para masculino | 1 para feminino)                                   |
+| `Genero`        | G√™nero do jogador (0 para masculino | 1 para feminino)                                   |
+
+## Licen√ßa
+
+Copyright ¬© 2024 SA-MP Programming Community
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Voc√™ pode obter uma c√≥pia da licen√ßa em:
+https://opensource.org/licenses/MIT
+
+### O que voc√™ pode fazer ‚úÖ
+
+1. **Uso Comercial**: 
+   - Liberdade total para uso comercial
+   - Pode vender produtos baseados no c√≥digo
+   - Sem necessidade de pagamento de royalties
+   - Pode usar em produtos propriet√°rios
+
+2. **Modifica√ß√£o**: 
+   - Modifica√ß√£o completa do c√≥digo fonte
+   - Criar trabalhos derivados
+   - Adaptar para qualquer prop√≥sito
+   - Integrar com outros sistemas
+
+3. **Distribui√ß√£o**: 
+   - Distribuir o software original
+   - Compartilhar vers√µes modificadas
+   - Incluir em outros projetos
+   - Distribuir comercialmente
+
+4. **Uso Privado**: 
+   - Uso em projetos privados
+   - Modifica√ß√µes confidenciais
+   - Sem obriga√ß√£o de divulga√ß√£o
+   - Uso interno irrestrito
+
+5. **Sublicenciamento**: 
+   - Pode mudar a licen√ßa do c√≥digo derivado
+   - Escolher diferentes termos para suas modifica√ß√µes
+   - Combinar com outras licen√ßas
+   - Criar termos pr√≥prios para distribui√ß√£o
+
+### O que voc√™ deve fazer ‚ö†Ô∏è
+
+1. **Incluir Licen√ßa**: 
+   - Manter c√≥pia da licen√ßa com o c√≥digo
+   - Incluir em todas as distribui√ß√µes
+   - Preservar texto original
+   - Manter vis√≠vel e acess√≠vel
+
+2. **Atribui√ß√£o**: 
+   - Manter aviso de direitos autorais
+   - Incluir em todas as c√≥pias
+   - Preservar cr√©ditos originais
+   - Documentar origem do c√≥digo
+
+### O que voc√™ n√£o pode fazer ‚ùå
+
+1. **Responsabilizar os Autores**: 
+   - Sem garantias de funcionamento
+   - Autores n√£o s√£o respons√°veis por danos
+   - Sem suporte obrigat√≥rio
+   - Uso por conta e risco
 
