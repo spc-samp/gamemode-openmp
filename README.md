@@ -113,7 +113,6 @@ Esse comando exibirá a distribuição e a versão do sistema operacional.
 | `Skin`        | ID da skin/roupa do jogador                                   |
 | `Genero`        | Gênero do jogador (0 para masculino / 1 para feminino)                                   |
 
-
 ## Licença
 
 Copyright © SA-MP Programming Community
