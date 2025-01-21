@@ -116,7 +116,7 @@ Esse comando exibirá a distribuição e a versão do sistema operacional.
 
 ## Licença
 
-Copyright © 2024 SA-MP Programming Community
+Copyright © SA-MP Programming Community
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
