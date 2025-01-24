@@ -99,7 +99,7 @@
             "samp_bcrypt",
             "mysql",
             "env"
-        ], // NOTA: Apenas para plugins SA-MP que ainda não foram migrados para o open.mp
+        ], // NOTA: Apenas para plugins SA-MP que ainda nÃ£o foram migrados para o open.mp
         "main_scripts": [
             "main"
         ],
@@ -108,10 +108,10 @@
     "rcon": {
         "allow_teleport": false,
         "enable": false,
-        "password": "1234" // NOTA: Troque a senha na produção/host
+        "password": "1234" // NOTA: Troque a senha na produÃ§Ã£o/host
     },
     "sleep": 5.0,
     "use_dyn_ticks": true,
     "website": "open.mp",
-    "spc_rich_presence": "" // URL da imagem/banner do seu servidor para enviar ao spc_rich_presence. Para mais informações, veja: https://github.com/spc-samp/spc-rich-presence
+    "spc_integration_image": "" // URL da imagem/banner do seu servidor para enviar ao spc-integration. Para mais informaÃ§Ãµes, veja: https://github.com/spc-samp/spc-integration
 }
